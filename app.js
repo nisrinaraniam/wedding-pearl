@@ -80,29 +80,18 @@ function finishOpening() {
   openingBusy = false;
 }
 
-function openInvitation(skip = false) {
-  if (openingBusy && !skip) return;
-  openingTimers.forEach(clearTimeout);
-  openingTimers = [];
+function openInvitation() {
+  if (openingBusy) return;
   openingBusy = true;
-  $('#open-invitation').disabled = true;
-  if (skip || reducedMotion.matches) { finishOpening(); return; }
+  const btn = $('#open-invitation');
+  if (btn) btn.disabled = true;
   
-  // Step 1: Open envelope, lift seal, slide letter with initials C & H out
-  opening.classList.add('is-opening');
+  // Start music
+  playAudio();
   
-  // Step 2: Open curtains to green satin bg and reveal loading page (at 950ms)
-  openingTimers.push(setTimeout(() => {
-    opening.classList.add('opened');
-  }, 950));
-  
-  // Step 3: Card begins gentle closing transition (at 2550ms)
-  openingTimers.push(setTimeout(() => {
-    opening.classList.add('card-closing');
-  }, 2550));
-  
-  // Step 4: Reveal hero page (at 3050ms)
-  openingTimers.push(setTimeout(finishOpening, 3050));
+  // Direct smooth fade out without lengthy loading animations
+  opening.classList.add('dismissed');
+  setTimeout(finishOpening, 500);
 }
 
 $('#open-invitation').addEventListener('click', () => openInvitation());
