@@ -87,7 +87,7 @@
 .pendant-asset{position:relative;display:block;width:100%;height:auto;margin-top:-5px}
 .cover-hanging{width:clamp(110px,14vw,180px)}.cover-hanging.fixture-left{left:max(18px,calc(50% - 560px))}.cover-hanging.fixture-right{right:max(18px,calc(50% - 560px));--cord-length:35px;top:39px}.fixture-right .hanging-item{animation-delay:-3s}
 .desktop-hanging{width:clamp(100px,21%,155px)}.desktop-hanging.fixture-left{left:2%}.desktop-hanging.fixture-right{right:2%;--cord-length:35px;top:38px}
-.hero{background:linear-gradient(rgba(148,116,92,0.1),rgba(41,37,33,0.25)),url('assets/pearl-cover-satin.webp') center/cover;color:var(--paper)}.hero:before{border-color:#e1c89f65}.hero-top{color:#f0e4d0;padding-right:56px}.hero>.eyebrow{color:#f0e4d0}.hero-hanging{display:none}.hero-medallion{filter:drop-shadow(0 10px 14px #18374732)}
+.hero{background:#F3EDE2 url('assets/pearl-hero-bg.webp') center top / cover no-repeat;color:#292521}.hero:before{border-color:rgba(148,116,92,0.25)}.hero-top{color:#94745C;padding-right:56px}.hero>.eyebrow{color:#94745C}.hero-hanging{display:none}.hero-medallion{filter:drop-shadow(0 8px 16px rgba(41,37,33,0.12))}
 .countdown-hanging{position:relative;top:0;width:115px;margin:-48px auto 18px;--cord-length:22px}
 .menu-toggle{position:fixed;bottom:25px;left:25px;z-index:95;height:44px;padding:0 18px;border-radius:22px;background:#FDFBF7;color:#94745C;border:1px solid #94745C;box-shadow:0 4px 14px rgba(41,37,33,0.15);cursor:pointer;display:flex;align-items:center;gap:8px;font:11px var(--sans);letter-spacing:.15em;text-transform:uppercase;transition:transform .3s,background .3s}
 .menu-toggle[hidden],.section-menu[hidden]{display:none}.menu-lines{width:15px;display:flex;flex-direction:column;gap:4px}.menu-lines i{height:1px;background:currentColor;width:100%;display:block;transition:transform .2s,opacity .2s}.menu-toggle[aria-expanded=true] .menu-lines i:first-child{transform:translateY(5px) rotate(45deg)}.menu-toggle[aria-expanded=true] .menu-lines i:nth-child(2){opacity:0}.menu-toggle[aria-expanded=true] .menu-lines i:last-child{transform:translateY(-5px) rotate(-45deg)}
@@ -174,3 +174,24 @@
 .fallback-couple{font-family:'Tangerine',cursive;font-size:26px;color:#6e523e;line-height:1;margin:0}
 .fallback-credit{font:9px var(--sans,sans-serif);letter-spacing:.2em;text-transform:uppercase;color:#7a6b57;text-decoration:none;transition:color .2s}
 .fallback-credit:hover{color:#94745C;text-decoration:underline}
+
+
+/* Hero refined with 3D embossed frame background */
+.hero{background:#F3EDE2 url('assets/pearl-hero-bg.webp') center top / cover no-repeat;color:#292521;display:flex;flex-direction:column;justify-content:space-between;min-height:100svh;min-height:100dvh;box-sizing:border-box;padding:24px 20px 32px}
+.hero:before{border:1px solid rgba(148,116,92,0.18);inset:10px}
+.hero-top{color:#94745C;padding-right:0;margin-bottom:12px;display:flex;justify-content:space-between}
+.hero>.eyebrow{color:#94745C;margin-bottom:0}
+.hero-medallion{filter:none!important;width:86%;max-width:340px;aspect-ratio:2/2.7;margin:auto auto;display:flex;align-items:center;justify-content:center}
+.hero-medallion .date-card{display:none}
+.hero-medallion-text{position:relative;inset:auto;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#94745C;text-align:center}
+.hero-medallion-text .eyebrow{font-size:7.5px;letter-spacing:.22em;color:#94745C}
+.hero-medallion-text h2{font-size:clamp(46px, 12vw, 62px);line-height:.88;margin:12px 0 8px;color:#292521}
+.hero-medallion-text h2 em{font-size:.45em;font-style:normal;display:inline-block;margin:4px 0;color:#94745C}
+.hero-medallion-text p{font:8px var(--sans);letter-spacing:.18em;color:#94745C;font-weight:500;margin:0}
+.hero-medallion-text .fine-rule{background:rgba(148,116,92,0.3);margin:16px auto 14px;width:55px;height:1px}
+.hero-medallion .hero-bouquet-bottom{display:none}
+.hero-medallion .hero-butterfly{position:absolute;top:-18px;right:-8px;width:48px;height:auto;opacity:.88;filter:drop-shadow(0 4px 6px rgba(41,37,33,0.15))}
+.hero-bottom{position:relative;z-index:4;margin:0 auto;max-width:310px;text-align:center}
+.hero-bottom p{font-size:13.5px;line-height:1.55;color:#5c4636;margin:0 0 16px}
+.scroll-cue{color:#94745C;margin-top:0;font-size:8px;letter-spacing:.22em}
+
