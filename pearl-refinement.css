@@ -1080,7 +1080,7 @@ p, blockquote {
 }
 .hero-medallion {
   width: min(84%, 380px) !important;
-  margin: 0 auto !important;
+  margin: clamp(65px, 12.5vh, 105px) auto 0 !important;
   text-align: center !important;
 }
 .hero-medallion-text {
@@ -1957,6 +1957,65 @@ p, blockquote {
   transform: rotate(8deg) !important;
 }
 
+
+/* Reference placement uses one proportional canvas so overlaps stay attached
+   on narrow phones and in the desktop invitation column. Asset padding is
+   included in these coordinates; the photo remains behind the right badge. */
+#keepsake .keepsake-collage {
+  max-width: 380px !important;
+  height: auto !important;
+  aspect-ratio: 353 / 430;
+  margin: 20px auto 0 !important;
+  container-type: inline-size;
+}
+#keepsake .keepsake-item {
+  max-width: none !important;
+  rotate: none !important;
+  transform: none !important;
+  filter: drop-shadow(0 3px 5px #40382f12) !important;
+}
+#keepsake .keepsake-envelope {
+  left: 38.5% !important; top: 8.6% !important;
+  width: 40% !important; z-index: 1 !important;
+}
+#keepsake .keepsake-love-pearl {
+  left: 25% !important; top: 14% !important;
+  width: 22% !important; z-index: 4 !important;
+}
+#keepsake .keepsake-name-card {
+  left: 4.2% !important; top: 26.5% !important;
+  width: 45.3% !important; aspect-ratio: 1 !important;
+  z-index: 2 !important;
+}
+#keepsake .name-card-copy { inset: 22% 27% 20% 20% !important; }
+#keepsake .keepsake-name-card > img,
+#keepsake .keepsake-date > img { filter: none !important; }
+#keepsake .name-card-copy .nc-name { font-size: clamp(16px,5.5cqw,21px) !important; }
+#keepsake .keepsake-photo {
+  left: 40.2% !important; top: 40% !important;
+  width: 29% !important; aspect-ratio: 102 / 154 !important;
+  z-index: 3 !important; border-radius: 0 !important;
+  box-shadow: 0 3px 8px #40382f14 !important;
+}
+#keepsake .keepsake-date {
+  left: 56% !important; right: auto !important; top: 21% !important;
+  width: 45.3% !important; aspect-ratio: 1 !important;
+  z-index: 4 !important;
+}
+#keepsake .keepsake-date-copy { inset: 23% 26% !important; }
+#keepsake .keepsake-pink-flower {
+  width: 38% !important; max-width: none !important;
+  right: 8% !important; bottom: -5% !important;
+  transform: none !important;
+}
+#keepsake .keepsake-fan {
+  left: 22% !important; top: 63% !important; bottom: auto !important;
+  width: 36% !important; z-index: 5 !important;
+}
+#keepsake .keepsake-pearl-flower {
+  left: 64% !important; right: auto !important; top: 68% !important;
+  bottom: auto !important; width: 15% !important; z-index: 5 !important;
+}
 
 /* ========================================================
    HARI BAHAGIA KAMI - ARCHED LACE EVENT CARDS
