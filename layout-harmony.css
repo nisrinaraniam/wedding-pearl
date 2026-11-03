@@ -1,0 +1,120 @@
+/* Consistent spacing within the invitation's decorative artwork. */
+#opening .envelope-motion,
+#opening.is-opening .envelope-motion { transform: none !important; rotate: none !important; }
+#opening .cover-rose {
+  left: auto !important; right: 9% !important; bottom: -6% !important;
+  width: 25% !important; max-width: 90px !important;
+  z-index: 12 !important; transform: rotate(12deg) !important;
+  rotate: none !important; animation: none !important;
+}
+
+/* Scroll entrances use independent properties, preserving the ornament layout. */
+#main.motion-ready .reveal, #main.motion-ready .reveal-scale {
+  opacity: 1; transform: none; transition: none;
+}
+#main.motion-enabled .scroll-enter {
+  opacity: 0 !important;
+  translate: var(--enter-x, 0) var(--enter-y, 18px) !important;
+  scale: var(--enter-scale, 1) !important;
+  transition: opacity .75s ease var(--enter-delay, 0ms), translate .95s cubic-bezier(.22,1,.36,1) var(--enter-delay, 0ms), scale .95s cubic-bezier(.22,1,.36,1) var(--enter-delay, 0ms) !important;
+}
+#main.motion-enabled .scroll-enter[data-entered=true] {
+  opacity: 1 !important; translate: 0 0 !important; scale: 1 !important;
+}
+#main .scroll-enter:focus-within { opacity: 1 !important; translate: 0 0 !important; scale: 1 !important; }
+@media(prefers-reduced-motion:reduce) {
+  #main .scroll-enter { opacity: 1 !important; translate: none !important; scale: 1 !important; transition: none !important; }
+}
+#home.hero { height: clamp(680px,100svh,880px) !important; min-height: 0 !important; max-height: none !important; padding: 0 !important; }
+#home .hero-medallion { position: absolute !important; inset: 25% 15% auto !important; width: 70% !important; height: 37% !important; margin: 0 !important; flex: none !important; }
+#home .hero-medallion-text h2.script { font-size: clamp(48px,12vw,64px) !important; line-height: 1.08 !important; }
+#home .hero-medallion-text .fine-rule { margin: 16px auto !important; }
+#home .hero-bottom { position: absolute !important; left: 18% !important; right: 18% !important; bottom: 14% !important; width: 64% !important; max-width: none !important; margin: 0 !important; }
+#home .hero-bottom p { font-size: 14px !important; line-height: 1.7 !important; }
+#home .scroll-cue { margin-top: 16px !important; }
+
+/* The botanical border must surround both names and family descriptions. */
+#couple { background-size: 100% 100% !important; padding: 90px 15% 115px !important; }
+#couple .section-heading { margin-bottom: 30px !important; padding: 0 !important; }
+#couple .couple-portrait { width: min(220px,88%) !important; margin: 0 auto 28px !important; }
+#couple .portrait-flower { width: 66px !important; right: -18px !important; bottom: 4px !important; }
+#couple .couple-names { margin: 0 !important; }
+#couple .couple-names h3 { font-size: clamp(20px,5.1vw,25px) !important; line-height: 1.35 !important; }
+#couple .couple-names p { font-size: 14px !important; line-height: 1.7 !important; margin-top: 8px !important; }
+#couple .couple-and { margin: 15px auto !important; font-size: 30px !important; }
+#keepsake { padding-top: 70px !important; padding-bottom: 45px !important; }
+#keepsake .keepsake-date-copy .date-num { font: 25px/1.1 var(--serif) !important; }
+#keepsake .keepsake-date-copy .date-month { font: 16px/1.3 var(--script) !important; }
+#keepsake .keepsake-date-copy .date-year { font: 12px/1.5 var(--serif) !important; }
+
+/* Original user PNG kept unchanged. Scale out its transparent margins:
+   visible bounds 415,68–1586,1932 in a 2000 x 2000 image. */
+#events { padding: 100px 28px 75px !important; }
+#events .section-heading { margin: 0 auto 36px !important; }
+#events .event-card {
+  width: 100% !important; max-width: 330px !important; min-height: 490px;
+  padding: 96px 30px 46px !important; margin: 0 auto 30px !important;
+  background: url('assets/event-lace-card-user.png') center / 170.8% 107.3% no-repeat !important;
+  border: 0 !important; box-shadow: none !important; border-radius: 0 !important;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  filter: drop-shadow(0 5px 9px #53412d12) !important;
+}
+#events .event-card:last-of-type { margin-bottom: 0 !important; }
+#events .event-card > img { width: 26px !important; height: 34px !important; object-fit: contain; margin: 0 auto 10px !important; }
+#events .event-card .event-number { margin: 0 0 6px !important; font-size: 9px !important; }
+#events .event-card h3 { font-size: 27px !important; margin: 8px 0 10px !important; }
+#events .event-card h4 { font-size: 18px !important; line-height: 1.4 !important; margin: 0 0 7px !important; }
+#events .event-card p:not(.eyebrow):not(.event-time) { font-size: 14px !important; line-height: 1.65 !important; }
+#events .event-card .fine-rule { margin: 18px auto !important; flex-shrink: 0; }
+#events .event-card .text-link { margin-top: 16px !important; font-size: 9px !important; line-height: 1.6 !important; }
+
+/* Shared reading rhythm and space around corner ornaments. */
+#story, #gallery, #gift, #wishes { padding-top: 90px !important; padding-bottom: 85px !important; }
+.section-heading h2.script { font-size: clamp(30px,7vw,38px) !important; margin: 10px 0 16px !important; }
+.section-heading > p:last-child:not(.eyebrow) { line-height: 1.75 !important; }
+#story .story-timeline p { font-size: 15px !important; line-height: 1.8 !important; }
+#story .story-timeline article { margin-bottom: 40px !important; }
+#story .story-timeline article:last-child { margin-bottom: 0 !important; }
+#gallery .section-heading { margin-bottom: 36px !important; }
+#gallery .gallery-caption { margin: 18px auto 28px !important; }
+#gallery .gallery-second { margin-top: 0 !important; }
+#gallery .gallery-flower-pearl, #wishes .wishes-flower-top, #gift .gift-flower-top, #story .story-flower-top-left { width: 65px !important; top: 12px !important; }
+#gift .gift-bouquet { width: 80px !important; bottom: 3px !important; right: 2px !important; }
+#dress .narrow-copy { font-size: 15px !important; line-height: 1.8 !important; }
+#dress .swatches { gap: 9px !important; margin-block: 30px 22px !important; }
+#dress .swatches > div { flex: 1; min-width: 0; }
+#dress .swatches span { font-size: 10px !important; line-height: 1.5; }
+#dress .dress-fan { width: 120px !important; margin: 20px auto 0 !important; }
+#countdown .countdown-grid { gap: 7px !important; }
+#countdown .countdown-grid > div { min-width: 0; flex: 1; }
+#countdown .countdown-grid strong { font-size: clamp(30px,8vw,44px) !important; }
+.demo-note { max-width: 300px !important; line-height: 1.7 !important; margin-bottom: 28px !important; }
+.elegant-form input:not([type=radio]), .elegant-form textarea, .elegant-form select { font-size: 16px !important; }
+.elegant-form fieldset { margin-block: 28px !important; }
+.radio-label { min-height: 46px; }
+
+/* Let closing text determine the card height instead of overflowing a square. */
+#closing { padding: 80px 16px 105px !important; }
+#closing .closing-medallion { width: 100% !important; max-width: 410px !important; aspect-ratio: auto !important; min-height: 470px; display: grid; place-items: center; }
+#closing .closing-fill { display: none; }
+#closing .closing-lace { inset: 0 !important; width: 100%; height: 100%; filter: none !important; }
+#closing .closing-copy { position: relative !important; inset: auto !important; width: 55%; padding: 80px 0 85px; margin: auto; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+#closing .closing-copy h2.script { font-size: 32px !important; line-height: 1.2 !important; margin: 0 !important; }
+#closing .closing-copy p:not(.eyebrow):not(.script) { font-size: 13px !important; line-height: 1.7 !important; margin: 0 !important; }
+#closing .closing-copy .fine-rule { margin: 5px auto !important; }
+#closing .closing-names { font-size: 31px !important; line-height: 1.15 !important; margin: 0 !important; }
+#closing .closing-names span { font-size: inherit !important; }
+#closing .closing-fan { width: 27% !important; right: -1% !important; bottom: 3% !important; }
+#closing .closing-date { margin-top: 28px !important; }
+@media (max-width:360px) {
+  #home.hero { height: 680px !important; }
+  #home .hero-bottom { left: 16% !important; right: 16% !important; width: 68% !important; }
+  #home .hero-bottom p { font-size: 13px !important; }
+  #couple { padding-inline: 14% !important; }
+  #couple .couple-names h3 { font-size: 19px !important; }
+  #couple .couple-names p { font-size: 13px !important; }
+  #events { padding-inline: 20px !important; }
+  #events .event-card { padding-inline: 27px !important; min-height: 470px; }
+  #closing .closing-copy { width: 57%; }
+  #closing .closing-copy h2.script { font-size: 28px !important; }
+}

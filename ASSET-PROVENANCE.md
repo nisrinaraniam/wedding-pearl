@@ -38,3 +38,5 @@ The downloader runs from `work/download-site-fonts-photos.py`; the primary agent
 
 
 Hanging support ornaments (jade-gold rails, rosettes, cords) are original CSS geometry, attached to all six lantern/knot placements. Hero uses the same generated blue satin asset as the cover.
+
+Event card: assets/event-lace-card-user.png supplied by the user on 2026-11-03 (Refine Concept Logo for Branding (8).png). Used unchanged as the background of both event cards.
