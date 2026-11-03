@@ -649,3 +649,41 @@ html.is-opening .cover-actions {
   inset: 16% 16% !important;
   background: #faf7f1 !important;
 }
+
+
+/* ========================================================
+   EVENTS SECTION ("Hari bahagia kami"): Satin Drapery Stage
+   ======================================================== */
+#events {
+  background-color: #F1E9DD !important;
+  background-image: url('assets/pearl-events-drape-bg.webp') !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: 100% 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+  padding-top: 85px !important;
+  padding-bottom: 80px !important;
+}
+#events::before {
+  display: none !important;
+}
+#events .events-peony,
+#events .events-tulip {
+  display: none !important;
+}
+#events .section-heading .eyebrow {
+  color: #94745C !important;
+  letter-spacing: .22em !important;
+}
+#events .section-heading h2 {
+  color: #292521 !important;
+}
+#events .event-card {
+  max-width: 350px !important;
+  width: calc(100% - 48px) !important;
+  margin: 24px auto !important;
+  background: rgba(255, 253, 248, 0.95) !important;
+  border: 1px solid rgba(148, 116, 92, 0.28) !important;
+  box-shadow: 0 12px 32px rgba(64, 56, 47, 0.09) !important;
+}
