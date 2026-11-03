@@ -478,15 +478,15 @@ function initScratchReveal() {
     ctx.font = '12px serif';
     ctx.fillText('✦', w / 2, h / 2 - 24);
 
-    // Script "Scratch here"
+    // Script "Scratch here" (delicate Allura script)
     ctx.fillStyle = '#5c4e3f';
-    ctx.font = 'italic 400 24px "Allura", cursive';
+    ctx.font = 'italic 400 19px "Allura", cursive';
     ctx.fillText('Scratch here', w / 2, h / 2 + 2);
 
     // Small subtitle
     ctx.fillStyle = '#9b8875';
-    ctx.font = '600 8.5px "Jost", sans-serif';
-    ctx.fillText('USAP DI SINI', w / 2, h / 2 + 22);
+    ctx.font = '600 7.5px Arial, sans-serif';
+    ctx.fillText('USAP DI SINI', w / 2, h / 2 + 20);
     ctx.restore();
   }
 

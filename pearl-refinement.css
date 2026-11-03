@@ -356,7 +356,7 @@ html.is-opening .cover-actions {
 }
 
 /* Let the hero fill its column; avoid narrow strips and cramped viewport scaling. */
-.hero { width: 100% !important; max-width: none !important; aspect-ratio: auto !important; min-height: 760px !important; height: 100svh !important; max-height: 960px !important; padding: clamp(52px, 8vh, 72px) 32px 64px !important; background-size: 100% 100% !important; }
+.hero { width: 100% !important; max-width: none !important; aspect-ratio: auto !important; min-height: 720px !important; height: 100svh !important; max-height: 920px !important; padding: clamp(36px, 5vh, 48px) 24px clamp(80px, 12vh, 120px) !important; background-size: 100% 100% !important; }
 .hero-top { font-size: 9px !important; padding: 0 !important; margin-bottom: 24px !important; }
 .hero > .eyebrow { font-size: 8px !important; max-width: 80%; }
 .hero-medallion { width: 78% !important; flex: 1; min-height: 0; aspect-ratio: auto !important; }
@@ -1020,126 +1020,642 @@ html.is-opening .cover-actions {
 }
 
 /* ========================================================
-   GLOBAL TYPOGRAPHY: Allura (Script/Accent) & Jost (Sans Text)
+   GLOBAL TYPOGRAPHY: Allura (Script/Accent) & Viaoda Libre / Cormorant (Serif)
    ======================================================== */
 :root {
   --script: 'Allura', 'Tangerine', cursive !important;
-  --serif: 'Jost', sans-serif !important;
-  --sans: 'Jost', sans-serif !important;
+  --serif: 'Viaoda Libre', 'Cormorant Garamond', Georgia, serif !important;
+  --sans: Arial, 'Cormorant Garamond', sans-serif !important;
 }
 
-body, main, p, input, textarea, select, button, label, .eyebrow {
-  font-family: 'Jost', sans-serif !important;
+body, main {
+  font-family: var(--serif) !important;
 }
 
-.script, h1.script, h2.script, h3.script {
-  font-family: 'Allura', cursive !important;
+p, blockquote {
+  font-family: var(--serif) !important;
+}
+
+.eyebrow, button, input, textarea, select, label, .text-link, .date-num, .date-month, .date-year, .event-number {
+  font-family: var(--sans) !important;
+}
+
+.script, h1.script, h2.script, h3.script, .closing-names {
+  font-family: var(--script) !important;
   font-weight: 400 !important;
 }
 
-/* Hero title with Allura */
-.hero-medallion-text h2.script {
-  font-size: clamp(62px, 15vw, 82px) !important;
+/* ========================================================
+   REFINED ALLURA SCALING & HARMONIOUS SPACING
+   ======================================================== */
+
+/* 1. Cover / Opening Card */
+.letter-couple.script {
+  font-size: clamp(28px, 6.5vw, 36px) !important;
   line-height: 1.05 !important;
-  margin: 14px 0 !important;
+  margin: 6px 0 !important;
+  text-align: center !important;
+}
+.letter-couple.script span {
+  font-size: 0.8em !important;
+}
+.letter-eyebrow,
+.letter-date,
+.letter-quote {
+  text-align: center !important;
+}
+
+/* 2. Desktop Art Panel */
+.desktop-text > .script {
+  font-size: clamp(52px, 6vw, 76px) !important;
+  line-height: 1.05 !important;
+  text-align: center !important;
+}
+
+/* 3. Hero Medallion & Bottom Copy */
+.hero {
+  padding: clamp(36px, 5vh, 46px) 24px clamp(60px, 9vh, 85px) !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+.hero-medallion {
+  width: min(84%, 380px) !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+.hero-medallion-text {
+  text-align: center !important;
+  padding: 0 !important;
+}
+.hero-medallion-text .eyebrow {
+  letter-spacing: .24em !important;
+  font-size: 8.5px !important;
+  color: #8c735d !important;
+}
+.hero-medallion-text h2.script {
+  font-size: clamp(42px, 10vw, 54px) !important;
+  line-height: 1.05 !important;
+  margin: 8px 0 !important;
+  color: #292521 !important;
+  text-align: center !important;
 }
 .hero-medallion-text h2 em {
-  font-family: 'Allura', cursive !important;
+  font-family: var(--script) !important;
   font-style: normal !important;
-  font-size: 0.5em !important;
+  font-size: 0.55em !important;
   margin: 0 4px !important;
+  display: inline-block !important;
+}
+.hero-medallion-text .fine-rule {
+  width: 44px !important;
+  height: 1px !important;
+  margin: 10px auto !important;
+  background: #bfa88f !important;
+  opacity: .5 !important;
+}
+.hero-medallion-text p {
+  font-family: var(--serif) !important;
+  font-size: 11px !important;
+  letter-spacing: .18em !important;
+  color: #8c735d !important;
+  text-align: center !important;
+  margin-top: 6px !important;
+}
+.hero-bottom {
+  max-width: 330px !important;
+  margin: 0 auto 40px !important;
+  text-align: center !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+.hero-bottom p {
+  font-family: var(--serif) !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  color: #554433 !important;
+  text-align: center !important;
+}
+.scroll-cue {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 8px !important;
+  font-family: var(--sans) !important;
+  font-size: 8.5px !important;
+  letter-spacing: .18em !important;
+  color: #8c735d !important;
+  text-align: center !important;
 }
 
-/* Section titles with Allura */
+/* 4. Section Headings (Allura Scaled Down) */
+.section-heading {
+  text-align: center !important;
+}
 .section-heading h2.script {
-  font-size: clamp(34px, 7vw, 44px) !important;
+  font-size: clamp(26px, 5.5vw, 34px) !important;
   line-height: 1.15 !important;
+  margin: 6px 0 10px !important;
+  text-align: center !important;
+}
+.section-heading .eyebrow {
+  text-align: center !important;
+}
+.section-heading > p:last-child {
+  font-family: var(--serif) !important;
+  text-align: center !important;
 }
 
-/* Closing typography coordinated with enlarged medallion */
-.closing-copy h2.script {
-  font-size: clamp(36px, 8vw, 46px) !important;
-  line-height: 1.1 !important;
+/* 5. Quote Section */
+#quote {
+  text-align: center !important;
 }
-.closing-names {
-  font-size: clamp(32px, 7.5vw, 40px) !important;
-  line-height: 1.1 !important;
+#quote blockquote {
+  font-family: var(--serif) !important;
+  font-style: italic !important;
+  font-size: clamp(18px, 4.2vw, 23px) !important;
+  line-height: 1.65 !important;
+  margin: 18px auto !important;
+  max-width: 340px !important;
+  text-align: center !important;
+}
+#quote .quote-foot {
+  font-family: var(--serif) !important;
+  font-size: 13.5px !important;
+  line-height: 1.7 !important;
+  text-align: center !important;
+}
+#quote .ornamental-rule {
+  text-align: center !important;
 }
 
-/* ========================================================
-   ROCOCO REVEAL FRAME & VINTAGE SILVER MIRROR KEEPSAKE
-   ======================================================== */
-.reveal-oval-viewport {
-  position: absolute !important;
-  left: 21% !important;
-  top: 14.5% !important;
-  width: 58% !important;
-  height: 72% !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
+/* 6. Couple Section */
+.couple {
+  text-align: center !important;
+  padding-bottom: 75px !important;
+}
+.couple-knot-ornament {
+  right: 14px !important;
+  top: 14px !important;
+  width: 44px !important;
   z-index: 1 !important;
-  background: #f7f2e9 !important;
+  pointer-events: none !important;
+}
+.couple-names {
+  margin-top: 18px !important;
+  text-align: center !important;
+}
+.couple-names h3 {
+  font-family: var(--serif) !important;
+  font-size: 21px !important;
+  font-weight: 500 !important;
+  color: #3b2f23 !important;
+  margin: 4px 0 2px !important;
+  text-align: center !important;
+}
+.couple-names p {
+  font-family: var(--serif) !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  color: #554433 !important;
+  margin: 2px auto !important;
+  text-align: center !important;
+}
+.couple-and {
+  font-family: var(--script) !important;
+  font-size: 26px !important;
+  color: #8c735d !important;
+  margin: 6px auto !important;
+  text-align: center !important;
+  display: block !important;
 }
 
+/* 7. Keepsake Section (Clearance for Name Card & Date) */
+.keepsake {
+  text-align: center !important;
+}
 .keepsake-pearls {
   position: absolute !important;
   width: 26% !important;
   max-width: 105px !important;
   height: auto !important;
   left: 7% !important;
-  top: 12px !important;
-  z-index: 4 !important;
+  top: 10px !important;
+  z-index: 2 !important;
   filter: drop-shadow(0 6px 14px rgba(41, 37, 33, 0.24)) !important;
   rotate: -6deg !important;
   pointer-events: none !important;
 }
-
 .keepsake-name-card {
   aspect-ratio: 1 / 1 !important;
-  width: 49% !important;
-  left: 7% !important;
-  top: 80px !important;
+  width: 48% !important;
+  left: 8% !important;
+  top: 75px !important;
+  z-index: 3 !important;
 }
-
 .keepsake-name-card .name-card-fill {
   inset: 17% 23% 16% 23% !important;
   border-radius: 50% !important;
   background: #faf6ee !important;
 }
-
 .keepsake-name-card .name-card-copy {
-  inset: 22% 25% 22% 25% !important;
+  inset: 24% 24% 24% 24% !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
-
 .name-card-copy .nc-name {
-  font-size: 25px !important;
+  font-family: var(--script) !important;
+  font-size: 18px !important;
+  color: #3b2f23 !important;
+  line-height: 1 !important;
+  text-align: center !important;
 }
-
+.name-card-copy .nc-amp {
+  font-family: var(--script) !important;
+  font-size: 14px !important;
+  color: #8c735d !important;
+  line-height: 1 !important;
+  margin: 1px 0 !important;
+  text-align: center !important;
+}
 .keepsake-fan {
-  left: 14% !important;
-  top: 215px !important;
-  width: 33% !important;
-  z-index: 5 !important;
+  position: absolute !important;
+  bottom: 12px !important;
+  left: 6% !important;
+  top: auto !important;
+  width: 32% !important;
+  z-index: 4 !important;
+  transform: rotate(-10deg) !important;
+  filter: drop-shadow(0 8px 14px rgba(41, 37, 33, 0.28)) !important;
+}
+.keepsake-date-copy {
+  text-align: center !important;
+}
+.keepsake-date-copy .date-num {
+  font-size: 20px !important;
+}
+.keepsake-date-copy .date-month {
+  font-size: 13px !important;
+}
+.keepsake-date-copy .date-year {
+  font-size: 12px !important;
+}
+.polaroid span {
+  font-family: var(--script) !important;
+  font-size: 13px !important;
+  text-align: center !important;
 }
 
-/* Couple section names spacing refinement */
-.couple {
+/* 8. Events Section */
+#events {
+  padding-top: 135px !important;
   padding-bottom: 75px !important;
+  text-align: center !important;
 }
-.couple-names {
+#events .section-heading {
+  margin-bottom: 24px !important;
+  text-align: center !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+.event-card {
+  width: 92% !important;
+  max-width: 350px !important;
+  padding: 34px 22px !important;
+  margin: 22px auto !important;
+  background: #fffdf8 !important;
+  border: 1px solid var(--pearl-line) !important;
+  border-radius: 130px 130px 4px 4px !important;
+  box-shadow: 0 10px 30px #69553e09 !important;
+  text-align: center !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+.event-card h3 {
+  font-family: var(--serif) !important;
+  font-size: 24px !important;
+  margin: 8px 0 6px !important;
+  color: #554130 !important;
+  text-align: center !important;
+}
+.event-card h4 {
+  font-family: var(--serif) !important;
+  font-size: 17px !important;
+  color: #554130 !important;
+  margin: 6px 0 4px !important;
+  text-align: center !important;
+}
+.event-card .event-time {
+  font-family: var(--sans) !important;
+  font-size: 12.5px !important;
+  letter-spacing: .08em !important;
+  color: #7d6854 !important;
+  text-align: center !important;
+}
+.event-card p:not(.eyebrow):not(.event-time) {
+  font-family: var(--serif) !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  color: #554433 !important;
+  text-align: center !important;
+}
+.event-card .text-link {
+  font-family: var(--sans) !important;
+  font-size: 9.5px !important;
+  letter-spacing: .16em !important;
+  color: #80664e !important;
+  border-bottom: 1px solid rgba(128, 102, 78, 0.45) !important;
+  display: inline-block !important;
+  margin-top: 14px !important;
+  text-align: center !important;
+}
+.events-peony,
+.events-tulip {
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+/* 9. Countdown Section */
+.countdown {
+  text-align: center !important;
+  padding: 85px 24px 75px !important;
+}
+.countdown .hanging-fixture {
+  top: -45px !important;
+}
+.countdown .section-heading {
+  margin-top: 10px !important;
+  text-align: center !important;
+}
+.countdown-grid {
+  justify-content: center !important;
+}
+.countdown-grid strong {
+  font-family: var(--serif) !important;
+}
+.countdown-grid span {
+  font-family: var(--sans) !important;
+}
+#countdown-status {
+  font-family: var(--serif) !important;
+  font-size: 13.5px !important;
+  text-align: center !important;
   margin-top: 16px !important;
 }
-.couple-names h3 {
-  font-size: 21px !important;
-  margin-bottom: 3px !important;
+#calendar-link {
+  display: inline-flex !important;
+  margin: 18px auto 0 !important;
+  font-family: var(--sans) !important;
 }
-.couple-names p {
-  font-size: 13px !important;
-  line-height: 1.4 !important;
-  margin-top: 2px !important;
-  margin-bottom: 2px !important;
+
+/* 10. Story Section (Fully Centered Chapters) */
+.story {
+  text-align: center !important;
+  padding-bottom: 85px !important;
 }
-.couple-and {
-  margin: 6px auto !important;
-  font-size: 28px !important;
+.story .section-heading {
+  text-align: center !important;
+}
+.story-timeline {
+  max-width: 340px !important;
+  margin: 0 auto !important;
+  padding-left: 0 !important;
+  text-align: center !important;
+}
+.story-timeline:before {
+  display: none !important;
+}
+.story-timeline article {
+  position: relative !important;
+  margin-bottom: 34px !important;
+  text-align: center !important;
+}
+.story-timeline article:before {
+  display: none !important;
+}
+.story-timeline article > span {
+  display: inline-block !important;
+  font-family: var(--sans) !important;
+  font-size: 10px !important;
+  letter-spacing: .22em !important;
+  color: #a45243 !important;
+  margin-bottom: 4px !important;
+  text-align: center !important;
+}
+.story-timeline h3 {
+  font-family: var(--serif) !important;
+  font-size: 19px !important;
+  font-weight: 500 !important;
+  color: #3b2f23 !important;
+  margin: 3px 0 8px !important;
+  text-align: center !important;
+}
+.story-timeline p {
+  font-family: var(--serif) !important;
+  font-size: 13.5px !important;
+  line-height: 1.65 !important;
+  color: #554433 !important;
+  text-align: center !important;
+}
+.story-peony {
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 0.55 !important;
+}
+
+/* 11. Gallery Section */
+.gallery {
+  text-align: center !important;
+}
+.gallery-caption {
+  font-family: var(--script) !important;
+  font-size: 22px !important;
+  margin: 16px auto !important;
+  text-align: center !important;
+  color: #94745C !important;
+}
+
+/* 12. Dress Code Section */
+.dress {
+  text-align: center !important;
+}
+.dress .narrow-copy {
+  font-family: var(--serif) !important;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  color: #554433 !important;
+  text-align: center !important;
+  max-width: 320px !important;
+  margin: 0 auto 20px !important;
+}
+.swatches {
+  justify-content: center !important;
+  margin: 20px auto 10px !important;
+}
+.swatches span {
+  font-family: var(--sans) !important;
+  font-size: 11px !important;
+  color: #554433 !important;
+}
+.dress-fan {
+  display: block !important;
+  margin: 24px auto 0 !important;
+  width: 160px !important;
+  rotate: 0deg !important;
+}
+
+/* 13. Gift Section */
+.gift {
+  text-align: center !important;
+}
+.gift .section-heading p {
+  font-family: var(--serif) !important;
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
+}
+.bank-card {
+  text-align: center !important;
+  max-width: 340px !important;
+  margin: 18px auto !important;
+}
+.bank-card h3 {
+  font-family: var(--sans) !important;
+  font-size: 18px !important;
+  letter-spacing: .12em !important;
+  color: #3b2f23 !important;
+  text-align: center !important;
+}
+.bank-card p {
+  font-family: var(--serif) !important;
+  font-size: 13.5px !important;
+  color: #554433 !important;
+  text-align: center !important;
+}
+
+/* 14. RSVP Section */
+.rsvp {
+  text-align: center !important;
+  padding-top: 105px !important;
+}
+.rsvp-seal {
+  position: absolute !important;
+  top: 25px !important;
+  left: calc(50% - 28px) !important;
+  width: 56px !important;
+}
+.rsvp .section-heading p {
+  font-family: var(--serif) !important;
+  font-size: 13.5px !important;
+  text-align: center !important;
+}
+.demo-note {
+  font-family: var(--serif) !important;
+  font-size: 11.5px !important;
+  text-align: center !important;
+}
+.elegant-form {
+  text-align: center !important;
+  max-width: 340px !important;
+  margin: 0 auto !important;
+}
+.elegant-form > label,
+.elegant-form legend {
+  font-family: var(--sans) !important;
+  text-align: center !important;
+  letter-spacing: .14em !important;
+}
+.elegant-form input,
+.elegant-form textarea,
+.elegant-form select {
+  font-family: var(--serif) !important;
+  text-align: center !important;
+  font-size: 14.5px !important;
+}
+.radio-label {
+  font-family: var(--serif) !important;
+  justify-content: center !important;
+  font-size: 13.5px !important;
+}
+
+/* 15. Wishes Section */
+.wishes {
+  text-align: center !important;
+}
+.wishes .section-heading p {
+  font-family: var(--serif) !important;
+  font-size: 13.5px !important;
+  text-align: center !important;
+}
+.empty-wishes {
+  font-family: var(--serif) !important;
+  font-size: 13.5px !important;
+  font-style: italic !important;
+  text-align: center !important;
+}
+
+/* 16. Closing Section */
+.closing,
+#closing {
+  text-align: center !important;
+}
+.closing-copy {
+  inset: 16% 16% 14% 16% !important;
+  text-align: center !important;
+}
+.closing .closing-copy h2.script,
+.closing-copy h2.script {
+  font-family: var(--script) !important;
+  font-size: clamp(28px, 6vw, 34px) !important;
+  margin-bottom: 4px !important;
+  color: #3b2f23 !important;
+  text-align: center !important;
+}
+.closing-copy p:not(.eyebrow):not(.script) {
+  font-family: var(--serif) !important;
+  font-size: clamp(12px, 2.8vw, 13px) !important;
+  line-height: 1.45 !important;
+  margin: 5px auto !important;
+  max-width: 230px !important;
+  text-align: center !important;
+  color: #4a3b2c !important;
+}
+.closing .closing-copy .eyebrow {
+  font-family: var(--sans) !important;
+  font-size: 7.5px !important;
+  letter-spacing: .24em !important;
+  color: #8a6c54 !important;
+  text-align: center !important;
+}
+.closing .closing-names,
+.closing-names {
+  font-family: var(--script) !important;
+  font-size: clamp(26px, 5.5vw, 32px) !important;
+  margin-top: 4px !important;
+  color: #3b2f23 !important;
+  text-align: center !important;
+}
+.closing .closing-date {
+  font-family: var(--sans) !important;
+  font-size: 12.5px !important;
+  letter-spacing: .22em !important;
+  color: #4a3b2c !important;
+  text-align: center !important;
+  margin-top: 16px !important;
+}
+.closing .eyebrow.light {
+  font-family: var(--sans) !important;
+  font-size: 8px !important;
+  letter-spacing: .2em !important;
+  color: #7d6854 !important;
+  text-align: center !important;
+}
+.closing .replay {
+  font-family: var(--sans) !important;
+  font-size: 8.5px !important;
+  letter-spacing: .16em !important;
+  color: #80664e !important;
+  text-align: center !important;
 }
