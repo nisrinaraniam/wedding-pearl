@@ -687,3 +687,31 @@ html.is-opening .cover-actions {
   border: 1px solid rgba(148, 116, 92, 0.28) !important;
   box-shadow: 0 12px 32px rgba(64, 56, 47, 0.09) !important;
 }
+
+
+/* ========================================================
+   FLOWER PEARL ORNAMENT REFINEMENTS
+   ======================================================== */
+.keepsake-pearls {
+  position: absolute !important;
+  width: 28% !important;
+  max-width: 110px !important;
+  height: auto !important;
+  left: 12% !important;
+  top: 10px !important;
+  z-index: 4 !important;
+  filter: drop-shadow(0 6px 14px rgba(41, 37, 33, 0.22)) !important;
+  pointer-events: none !important;
+}
+.dress-fan {
+  width: 130px !important;
+  max-width: 35vw !important;
+  height: auto !important;
+  margin: 28px auto -15px !important;
+  display: block !important;
+  filter: drop-shadow(0 6px 14px rgba(41, 37, 33, 0.18)) !important;
+  rotate: 0deg !important;
+}
+.pendant-asset {
+  filter: drop-shadow(0 6px 12px rgba(41, 37, 33, 0.25)) !important;
+}
