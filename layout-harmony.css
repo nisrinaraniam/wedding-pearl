@@ -279,3 +279,18 @@
   filter: drop-shadow(0 10px 20px rgba(41, 37, 33, 0.18)) !important;
   pointer-events: none !important;
 }
+
+/* Footer brand link for riungin.id */
+.footer-brand-link {
+  color: inherit !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+  transition: opacity .2s ease !important;
+  cursor: pointer !important;
+}
+.footer-brand-link:hover,
+.footer-brand-link:focus-visible {
+  opacity: .75 !important;
+  color: #8c7864 !important;
+}
