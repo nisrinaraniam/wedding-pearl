@@ -1073,3 +1073,25 @@ body, main, p, input, textarea, select, button, label, .eyebrow {
   width: 33% !important;
   z-index: 5 !important;
 }
+
+/* Couple section names spacing refinement */
+.couple {
+  padding-bottom: 75px !important;
+}
+.couple-names {
+  margin-top: 16px !important;
+}
+.couple-names h3 {
+  font-size: 21px !important;
+  margin-bottom: 3px !important;
+}
+.couple-names p {
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+}
+.couple-and {
+  margin: 6px auto !important;
+  font-size: 28px !important;
+}

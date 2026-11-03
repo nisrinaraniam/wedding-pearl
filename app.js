@@ -557,7 +557,7 @@ function initScratchReveal() {
     canvas.style.opacity = '0';
     canvas.style.pointerEvents = 'none';
     if (statusEl) {
-      statusEl.textContent = 'Cintya & Hans · Captured in love ♡';
+      statusEl.textContent = 'Ariana & Johan · Captured in love ♡';
       statusEl.style.color = '#94745C';
       statusEl.style.fontWeight = '500';
     }
