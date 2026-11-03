@@ -72,6 +72,7 @@ if (guestName) {
 // (opening variables declared at top)
 
 function finishOpening() {
+  setTimeout(initScratchReveal, 400);
   opening.classList.add('dismissed');
   document.body.classList.remove('unopened');
   main.inert = false;
@@ -423,3 +424,186 @@ $('#music-toggle').addEventListener('click', async () => {
 if (new URLSearchParams(window.location.search).get('opened') === '1') {
   finishOpening();
 }
+
+
+// ==========================================
+// SCRATCH TO REVEAL PHOTO (Frame Reveal)
+// ==========================================
+function initScratchReveal() {
+  const canvas = document.getElementById('scratch-canvas');
+  const viewport = document.getElementById('reveal-viewport');
+  const statusEl = document.getElementById('reveal-status');
+  if (!canvas || !viewport) return;
+
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  let isDrawing = false;
+  let isRevealed = false;
+  let lastX = 0, lastY = 0;
+  let strokeCount = 0;
+
+  function resizeAndDraw() {
+    const rect = viewport.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = Math.round(rect.width);
+    const h = Math.round(rect.height);
+    if (!w || !h) return;
+
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    ctx.scale(dpr, dpr);
+
+    // Warm ivory / sand gradient background
+    const grad = ctx.createLinearGradient(0, 0, w, h);
+    grad.addColorStop(0, '#f9f6ee');
+    grad.addColorStop(0.5, '#f2ece0');
+    grad.addColorStop(1, '#e8ded0');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, w, h);
+
+    // Subtle paper grain dots
+    ctx.fillStyle = 'rgba(148, 116, 92, 0.08)';
+    for (let i = 0; i < 350; i++) {
+      const rx = Math.random() * w;
+      const ry = Math.random() * h;
+      ctx.fillRect(rx, ry, 1.5, 1.5);
+    }
+
+    // Calligraphic "Scratch here" text matching user reference
+    ctx.save();
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    // Sparkle diamond icon
+    ctx.fillStyle = '#8a7967';
+    ctx.font = '12px serif';
+    ctx.fillText('✦', w / 2, h / 2 - 24);
+
+    // Script "Scratch here"
+    ctx.fillStyle = '#5c4e3f';
+    ctx.font = 'italic 500 17px "Playfair Display", "Times New Roman", serif';
+    ctx.fillText('Scratch here', w / 2, h / 2 + 2);
+
+    // Small subtitle
+    ctx.fillStyle = '#9b8875';
+    ctx.font = '600 7px sans-serif';
+    ctx.fillText('USAP DI SINI', w / 2, h / 2 + 22);
+    ctx.restore();
+  }
+
+  // Draw once ready
+  if (viewport.offsetWidth > 0) {
+    resizeAndDraw();
+  } else {
+    // Retry when visible
+    setTimeout(resizeAndDraw, 300);
+  }
+
+  window.addEventListener('resize', () => { if (!isRevealed) resizeAndDraw(); });
+
+  function getPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    const clientX = e.clientX ?? (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+    const clientY = e.clientY ?? (e.touches && e.touches[0] ? e.touches[0].clientY : 0);
+    return {
+      x: clientX - rect.left,
+      y: clientY - rect.top
+    };
+  }
+
+  function scratch(x, y) {
+    ctx.globalCompositeOperation = 'destination-out';
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    ctx.lineWidth = Math.max(30, (canvas.width / dpr) * 0.28);
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+
+    lastX = x;
+    lastY = y;
+    strokeCount++;
+
+    if (strokeCount % 6 === 0) {
+      checkPercentRevealed();
+    }
+  }
+
+  function checkPercentRevealed() {
+    if (isRevealed) return;
+    try {
+      const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imgData.data;
+      let transparent = 0;
+      const step = 8;
+      let sampled = 0;
+
+      for (let i = 3; i < data.length; i += 4 * step) {
+        sampled++;
+        if (data[i] < 128) transparent++;
+      }
+
+      const ratio = transparent / sampled;
+      if (ratio > 0.42) {
+        revealComplete();
+      }
+    } catch (err) {}
+  }
+
+  function revealComplete() {
+    if (isRevealed) return;
+    isRevealed = true;
+    canvas.style.opacity = '0';
+    canvas.style.pointerEvents = 'none';
+    if (statusEl) {
+      statusEl.textContent = 'Cintya & Hans · Captured in love ♡';
+      statusEl.style.color = '#94745C';
+      statusEl.style.fontWeight = '500';
+    }
+  }
+
+  canvas.addEventListener('pointerdown', e => {
+    if (isRevealed) return;
+    isDrawing = true;
+    const pos = getPos(e);
+    lastX = pos.x;
+    lastY = pos.y;
+    scratch(pos.x, pos.y);
+  });
+
+  window.addEventListener('pointermove', e => {
+    if (!isDrawing || isRevealed) return;
+    const pos = getPos(e);
+    scratch(pos.x, pos.y);
+  });
+
+  window.addEventListener('pointerup', () => {
+    if (isDrawing) {
+      isDrawing = false;
+      checkPercentRevealed();
+    }
+  });
+
+  canvas.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      revealComplete();
+    }
+  });
+
+  // Call on intersection when section comes into view
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !isRevealed && canvas.width === 0) {
+          resizeAndDraw();
+        }
+      });
+    }, { threshold: 0.1 });
+    const sec = document.getElementById('reveal-photo');
+    if (sec) obs.observe(sec);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', initScratchReveal);

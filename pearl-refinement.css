@@ -823,3 +823,90 @@ html.is-opening .cover-actions {
 #dress .dress-fan {
   filter: drop-shadow(0 8px 18px rgba(0,0,0,0.35)) !important;
 }
+
+
+/* ========================================================
+   SCRATCH REVEAL PHOTO SECTION (Below Hero)
+   ======================================================== */
+.reveal-moment {
+  text-align: center;
+  padding: 80px 24px 70px;
+  position: relative;
+  background: var(--paper);
+  overflow: hidden;
+}
+.reveal-moment .section-heading {
+  margin-bottom: 24px;
+}
+.reveal-moment .section-heading .eyebrow {
+  color: #94745C !important;
+  letter-spacing: .24em !important;
+  margin-bottom: 4px !important;
+}
+.reveal-moment .section-heading h2 {
+  font-size: 38px !important;
+  color: #292521 !important;
+  margin: 6px 0 10px !important;
+}
+.reveal-instruction {
+  font-size: 14px;
+  color: #806c56;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.reveal-frame-container {
+  position: relative;
+  width: min(320px, 86vw);
+  aspect-ratio: 1 / 1;
+  margin: 24px auto 16px;
+  filter: drop-shadow(0 14px 34px rgba(41, 37, 33, 0.16));
+}
+.reveal-oval-viewport {
+  position: absolute;
+  left: 33.3%;
+  top: 25.2%;
+  width: 33.4%;
+  height: 49.3%;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+  background: #f7f2e9;
+}
+.reveal-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 50%;
+  display: block;
+}
+.reveal-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+  transition: opacity .7s ease;
+}
+.reveal-frame-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+.reveal-status {
+  font-size: 13.5px;
+  font-style: italic;
+  color: #806c56;
+  margin-top: 14px;
+  min-height: 22px;
+  transition: color .4s, font-weight .4s;
+}
