@@ -356,7 +356,7 @@ html.is-opening .cover-actions {
 }
 
 /* Let the hero fill its column; avoid narrow strips and cramped viewport scaling. */
-.hero { width: 100% !important; max-width: none !important; aspect-ratio: auto !important; min-height: 760px !important; height: 100svh !important; max-height: 960px !important; padding: 36px 32px 64px !important; background-size: 100% 100% !important; }
+.hero { width: 100% !important; max-width: none !important; aspect-ratio: auto !important; min-height: 760px !important; height: 100svh !important; max-height: 960px !important; padding: clamp(52px, 8vh, 72px) 32px 64px !important; background-size: 100% 100% !important; }
 .hero-top { font-size: 9px !important; padding: 0 !important; margin-bottom: 24px !important; }
 .hero > .eyebrow { font-size: 8px !important; max-width: 80%; }
 .hero-medallion { width: 78% !important; flex: 1; min-height: 0; aspect-ratio: auto !important; }
