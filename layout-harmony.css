@@ -2,10 +2,17 @@
 #opening .envelope-motion,
 #opening.is-opening .envelope-motion { transform: none !important; rotate: none !important; }
 #opening .cover-rose {
-  left: auto !important; right: 9% !important; bottom: -6% !important;
-  width: 25% !important; max-width: 90px !important;
-  z-index: 12 !important; transform: rotate(12deg) !important;
-  rotate: none !important; animation: none !important;
+  left: auto !important; right: 8% !important; bottom: -5% !important;
+  width: 26% !important; max-width: 95px !important;
+  z-index: 12 !important;
+  transform-origin: 35% 75% !important;
+  rotate: none !important;
+  animation: coverRoseSway 5.5s ease-in-out infinite alternate !important;
+}
+@keyframes coverRoseSway {
+  0% { transform: rotate(10deg) translateY(0); }
+  50% { transform: rotate(16deg) translateY(-5px) scale(1.03); }
+  100% { transform: rotate(11deg) translateY(3px) scale(0.99); }
 }
 
 /* Scroll entrances use independent properties, preserving the ornament layout. */
@@ -117,4 +124,155 @@
   #events .event-card { padding-inline: 27px !important; min-height: 470px; }
   #closing .closing-copy { width: 57%; }
   #closing .closing-copy h2.script { font-size: 28px !important; }
+}
+
+
+/* ========================================================
+   REFINEMENTS: Cover, Bride & Groom, Events, Closing
+   ======================================================== */
+
+/* 1. Open envelope letter card: only 'YOU ARE INVITED...' & couple */
+.letter-card {
+  position: absolute !important;
+  top: 14% !important;
+  left: 12% !important;
+  width: 76% !important;
+  height: 48% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 8px 10px !important;
+  box-sizing: border-box !important;
+}
+.letter-eyebrow {
+  font: 600 clamp(7px, 2vw, 8px) var(--sans) !important;
+  letter-spacing: .2em !important;
+  color: #806c56 !important;
+  text-transform: uppercase !important;
+  margin: 0 0 6px !important;
+  white-space: nowrap !important;
+}
+.letter-couple {
+  font-family: var(--script), cursive !important;
+  font-size: clamp(32px, 9vw, 44px) !important;
+  color: #2e241c !important;
+  line-height: 1.1 !important;
+  margin: 0 !important;
+  font-weight: 400 !important;
+}
+.letter-couple span {
+  font-size: .65em !important;
+  color: #806c56 !important;
+  font-family: var(--script), cursive !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+}
+
+/* 2. Bride & Groom: Smaller photo holder & lowered title/subtitle */
+#couple {
+  padding-top: 110px !important;
+  padding-bottom: 75px !important;
+}
+#couple .section-heading {
+  margin-top: 10px !important;
+  margin-bottom: 22px !important;
+  padding: 0 !important;
+}
+#couple .couple-portrait {
+  width: min(175px, 52vw) !important;
+  aspect-ratio: 3 / 4 !important;
+  margin: 0 auto 22px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 24px rgba(64, 56, 47, 0.14) !important;
+}
+#couple .portrait-flower {
+  width: 55px !important;
+  right: -12px !important;
+  bottom: 0px !important;
+}
+#couple .couple-names h3 {
+  font-size: clamp(20px, 5.2vw, 24px) !important;
+}
+#couple .couple-names p {
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+}
+
+/* 3. Events: Compact lace card & lowered title/subtitle */
+#events {
+  padding-top: 115px !important;
+  padding-bottom: 70px !important;
+}
+#events .section-heading {
+  margin: 10px auto 28px !important;
+}
+#events .event-card,
+.event-card {
+  width: 82% !important;
+  max-width: 295px !important;
+  min-height: 0 !important;
+  padding: 44px 22px 34px !important;
+  margin: 0 auto 22px !important;
+  background: url('assets/event-card-bg.webp?v=compact2028') no-repeat center center / 100% 100% !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 8px 18px rgba(64, 56, 47, 0.12)) !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+#events .event-card > img {
+  width: 28px !important;
+  height: auto !important;
+  margin: 0 auto 6px !important;
+}
+#events .event-card .event-number {
+  font-size: 8.5px !important;
+  margin: 0 0 3px !important;
+}
+#events .event-card .eyebrow {
+  font-size: 8px !important;
+  margin-bottom: 2px !important;
+}
+#events .event-card h3 {
+  font-size: 24px !important;
+  margin: 4px 0 6px !important;
+}
+#events .event-card .event-time {
+  font-size: 12px !important;
+  margin-bottom: 6px !important;
+}
+#events .event-card .fine-rule {
+  margin: 10px auto !important;
+  width: 36px !important;
+}
+#events .event-card h4 {
+  font-size: 16px !important;
+  margin: 0 0 4px !important;
+}
+#events .event-card p:not(.eyebrow):not(.event-time) {
+  font-size: 12.5px !important;
+  line-height: 1.5 !important;
+}
+#events .event-card .text-link {
+  margin-top: 12px !important;
+  font-size: 9px !important;
+}
+
+/* 4. Thank You / Closing: Attach bouquet to bottom-right of lace frame */
+#closing .closing-fan {
+  position: absolute !important;
+  width: clamp(130px, 36%, 155px) !important;
+  right: 12% !important;
+  bottom: 2% !important;
+  transform: rotate(0deg) !important;
+  z-index: 5 !important;
+  filter: drop-shadow(0 10px 20px rgba(41, 37, 33, 0.18)) !important;
+  pointer-events: none !important;
 }
