@@ -715,3 +715,111 @@ html.is-opening .cover-actions {
 .pendant-asset {
   filter: drop-shadow(0 6px 12px rgba(41, 37, 33, 0.25)) !important;
 }
+
+
+/* ========================================================
+   COUNTDOWN SECTION: Dark Brown Palette Theme
+   ======================================================== */
+#countdown {
+  background: #46382b !important;
+  color: #FAF7F1 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  padding-block: 80px 75px !important;
+}
+#countdown::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  opacity: 0.12 !important;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23ffffff' opacity='.35' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E") !important;
+}
+#countdown .section-heading .eyebrow {
+  color: #D9C9B5 !important;
+  letter-spacing: .24em !important;
+  opacity: 0.95 !important;
+}
+#countdown .section-heading h2 {
+  color: #FAF7F1 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3) !important;
+}
+#countdown .countdown-grid strong {
+  color: #FAF7F1 !important;
+  font-weight: 500 !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35) !important;
+}
+#countdown .countdown-grid span {
+  color: #D9C9B5 !important;
+  letter-spacing: .2em !important;
+  font-weight: 600 !important;
+}
+#countdown .countdown-grid i {
+  color: #E8D9C5 !important;
+  opacity: 0.8 !important;
+}
+#countdown #countdown-status {
+  color: #D9C9B5 !important;
+  font-size: 14px !important;
+  opacity: 0.95 !important;
+}
+#countdown #calendar-link {
+  border-color: #D9C9B5 !important;
+  color: #FAF7F1 !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  font-weight: 600 !important;
+  letter-spacing: .18em !important;
+}
+#countdown #calendar-link:hover {
+  background: #FAF7F1 !important;
+  color: #46382b !important;
+}
+
+/* ========================================================
+   DRESS CODE SECTION: Dark Brown Palette Theme
+   ======================================================== */
+#dress {
+  background: #46382b !important;
+  color: #FAF7F1 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  padding-block: 80px 75px !important;
+}
+#dress::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  opacity: 0.12 !important;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23ffffff' opacity='.35' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E") !important;
+}
+#dress .section-heading .eyebrow {
+  color: #D9C9B5 !important;
+  letter-spacing: .24em !important;
+  opacity: 0.95 !important;
+}
+#dress .section-heading h2 {
+  color: #FAF7F1 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3) !important;
+}
+#dress .section-heading p {
+  color: #D9C9B5 !important;
+  font-size: 14px !important;
+}
+#dress .narrow-copy {
+  color: #FAF7F1 !important;
+  opacity: 0.92 !important;
+  line-height: 1.7 !important;
+}
+#dress .swatches span {
+  color: #FAF7F1 !important;
+  font-weight: 500 !important;
+}
+#dress .swatches i {
+  border: 2px solid rgba(232, 217, 197, 0.5) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+}
+#dress .dress-fan {
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.35)) !important;
+}
