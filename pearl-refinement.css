@@ -1659,3 +1659,90 @@ p, blockquote {
   color: #80664e !important;
   text-align: center !important;
 }
+
+/* ========================================================
+   ORNAMENTS IN EMPTY SPACES (Story, Gallery, Gift, Wishes)
+   ======================================================== */
+.story-flower-top-left {
+  position: absolute !important;
+  width: clamp(75px, 18vw, 105px) !important;
+  top: -10px !important;
+  left: -15px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 0.88 !important;
+  filter: drop-shadow(0 6px 14px rgba(41, 37, 33, 0.12)) !important;
+  transform: rotate(15deg) !important;
+}
+
+.gallery-snail-pearl {
+  position: absolute !important;
+  width: clamp(65px, 16vw, 90px) !important;
+  top: 15px !important;
+  right: -8px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 0.9 !important;
+  filter: drop-shadow(0 8px 18px rgba(41, 37, 33, 0.15)) !important;
+  transform: rotate(-10deg) !important;
+}
+
+.gallery-flower-bottom {
+  position: absolute !important;
+  width: clamp(70px, 17vw, 95px) !important;
+  bottom: -15px !important;
+  left: -10px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 0.8 !important;
+  filter: drop-shadow(0 6px 14px rgba(41, 37, 33, 0.12)) !important;
+  transform: rotate(25deg) !important;
+}
+
+.gift-flower-top {
+  position: absolute !important;
+  width: clamp(65px, 16vw, 85px) !important;
+  top: 12px !important;
+  left: -10px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 0.8 !important;
+  filter: drop-shadow(0 6px 14px rgba(41, 37, 33, 0.12)) !important;
+  transform: rotate(-20deg) !important;
+}
+
+.gift-bouquet {
+  position: absolute !important;
+  width: clamp(85px, 22vw, 115px) !important;
+  bottom: -20px !important;
+  right: -10px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 0.88 !important;
+  filter: drop-shadow(0 8px 20px rgba(41, 37, 33, 0.16)) !important;
+  transform: rotate(-15deg) !important;
+}
+
+.wishes-flower-top {
+  position: absolute !important;
+  width: clamp(65px, 16vw, 90px) !important;
+  top: 15px !important;
+  left: -12px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 0.85 !important;
+  filter: drop-shadow(0 6px 14px rgba(41, 37, 33, 0.12)) !important;
+  transform: rotate(20deg) !important;
+}
+
+.wishes-snail-bottom {
+  position: absolute !important;
+  width: clamp(65px, 16vw, 90px) !important;
+  bottom: 10px !important;
+  right: -8px !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  opacity: 0.88 !important;
+  filter: drop-shadow(0 8px 18px rgba(41, 37, 33, 0.15)) !important;
+  transform: rotate(15deg) !important;
+}
