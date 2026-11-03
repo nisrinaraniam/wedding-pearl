@@ -79,22 +79,14 @@ if (window.location.search.includes('state=opening')) {
   <div class="hero-bottom"><p>Dengan penuh kasih,<br>kami mengundang Anda untuk merayakan<br>awal kisah baru kami.</p><a href="#reveal-photo" class="scroll-cue">BUKA LEMBAR CERITA <span>↓</span></a></div>
 </section>
 
-<section class="reveal-moment section-paper" id="reveal-photo" aria-labelledby="reveal-heading">
-  <div class="section-heading reveal">
-    <p class="eyebrow">A GLIMPSE OF OUR LOVE</p>
-    <h2 class="script" id="reveal-heading">Touch to reveal</h2>
-    <p class="reveal-instruction">Gesek perlahan untuk membuka foto kenangan kami</p>
-  </div>
-  
-  <div class="reveal-frame-container reveal">
+<section class="reveal-moment" id="reveal-photo" aria-label="Foto kenangan interaktif">
+  <div class="reveal-frame-container">
     <div class="reveal-oval-viewport" id="reveal-viewport">
       <img class="reveal-photo" src="assets/photo-1.jpg" alt="Foto kenangan Cintya &amp; Hans" loading="lazy">
       <canvas id="scratch-canvas" role="button" tabindex="0" aria-label="Reveal photo of Cintya &amp; Hans" class="reveal-canvas" style="touch-action: none; opacity: 1; pointer-events: auto;"></canvas>
     </div>
     <img class="reveal-frame-overlay" src="assets/pearl-reveal-frame.webp" alt="" aria-hidden="true">
   </div>
-  
-  <p class="reveal-status" id="reveal-status" aria-live="polite">Usap area tengah untuk melihat foto ✨</p>
 </section>
 
 <section class="quote section-paper" id="quote">
