@@ -1017,3 +1017,59 @@ body, main, p, input, textarea, select, button, label, .eyebrow {
   font-size: clamp(36px, 7vw, 46px) !important;
   line-height: 1.1 !important;
 }
+
+/* ========================================================
+   ROCOCO REVEAL FRAME & VINTAGE SILVER MIRROR KEEPSAKE
+   ======================================================== */
+.reveal-oval-viewport {
+  position: absolute !important;
+  left: 21% !important;
+  top: 14.5% !important;
+  width: 58% !important;
+  height: 72% !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+  background: #f7f2e9 !important;
+}
+
+.keepsake-pearls {
+  position: absolute !important;
+  width: 26% !important;
+  max-width: 105px !important;
+  height: auto !important;
+  left: 7% !important;
+  top: 12px !important;
+  z-index: 4 !important;
+  filter: drop-shadow(0 6px 14px rgba(41, 37, 33, 0.24)) !important;
+  rotate: -6deg !important;
+  pointer-events: none !important;
+}
+
+.keepsake-name-card {
+  aspect-ratio: 1 / 1 !important;
+  width: 49% !important;
+  left: 7% !important;
+  top: 80px !important;
+}
+
+.keepsake-name-card .name-card-fill {
+  inset: 17% 23% 16% 23% !important;
+  border-radius: 50% !important;
+  background: #faf6ee !important;
+}
+
+.keepsake-name-card .name-card-copy {
+  inset: 22% 25% 22% 25% !important;
+}
+
+.name-card-copy .nc-name {
+  font-size: 25px !important;
+}
+
+.keepsake-fan {
+  left: 14% !important;
+  top: 215px !important;
+  width: 33% !important;
+  z-index: 5 !important;
+}
