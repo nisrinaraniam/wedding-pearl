@@ -1747,3 +1747,212 @@ p, blockquote {
   filter: drop-shadow(0 8px 18px rgba(41, 37, 33, 0.15)) !important;
   transform: rotate(15deg) !important;
 }
+
+/* ========================================================
+   KEEPSAKE SECTION REDESIGN (Matching User Reference)
+   ======================================================== */
+.keepsake {
+  padding: clamp(60px, 10vh, 85px) 15px clamp(60px, 10vh, 85px) !important;
+  position: relative !important;
+  text-align: center !important;
+  background: var(--paper) !important;
+  overflow: hidden !important;
+}
+
+.keepsake-collage {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 380px !important;
+  height: 470px !important;
+  margin: 15px auto 20px !important;
+}
+
+/* 1. Top center horizontal envelope */
+.keepsake-envelope {
+  position: absolute !important;
+  top: 8px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 53% !important;
+  max-width: 205px !important;
+  z-index: 1 !important;
+  filter: drop-shadow(0 8px 16px rgba(41, 37, 33, 0.16)) !important;
+}
+.keepsake-envelope img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* 2. Love pearl strand draping over left frame */
+.keepsake-love-pearl {
+  position: absolute !important;
+  top: 18px !important;
+  left: 17% !important;
+  width: 32% !important;
+  max-width: 125px !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+  filter: drop-shadow(0 5px 10px rgba(41, 37, 33, 0.15)) !important;
+}
+
+/* 3. Left ornate oval frame with Ariana & Johan */
+.keepsake-name-card {
+  position: absolute !important;
+  top: 85px !important;
+  left: 1% !important;
+  width: 47% !important;
+  max-width: 180px !important;
+  aspect-ratio: 1 / 1 !important;
+  z-index: 2 !important;
+  filter: drop-shadow(0 10px 20px rgba(41, 37, 33, 0.16)) !important;
+  transform: rotate(-2deg) !important;
+}
+.keepsake-name-card img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+.keepsake-name-card .name-card-fill {
+  position: absolute !important;
+  inset: 18% 22% 18% 22% !important;
+  border-radius: 50% !important;
+  background: #faf7f1 !important;
+  z-index: 1 !important;
+}
+.keepsake-name-card .name-card-copy {
+  position: absolute !important;
+  inset: 20% 24% 20% 24% !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.name-card-copy .nc-name {
+  font-family: 'Allura', cursive !important;
+  font-size: 21px !important;
+  line-height: 1.08 !important;
+  color: #292521 !important;
+}
+.name-card-copy .nc-amp {
+  font-family: 'Allura', cursive !important;
+  font-size: 16px !important;
+  color: #94745C !important;
+  line-height: 1 !important;
+  margin: 1px 0 !important;
+}
+
+/* 4. Center vertical wedding photo */
+.keepsake-photo {
+  position: absolute !important;
+  top: 128px !important;
+  left: 33.5% !important;
+  width: 35% !important;
+  max-width: 135px !important;
+  aspect-ratio: 3 / 4 !important;
+  z-index: 3 !important;
+  overflow: hidden !important;
+  border-radius: 3px !important;
+  box-shadow: 0 10px 24px rgba(41, 37, 33, 0.22) !important;
+  background: #f0eae1 !important;
+}
+.keepsake-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 25% !important;
+  display: block !important;
+}
+
+/* 5. Right oval lace badge with Date */
+.keepsake-date {
+  position: absolute !important;
+  top: 80px !important;
+  right: 1% !important;
+  width: 40% !important;
+  max-width: 155px !important;
+  aspect-ratio: 1 / 1 !important;
+  z-index: 2 !important;
+  filter: drop-shadow(0 10px 20px rgba(41, 37, 33, 0.14)) !important;
+  transform: rotate(5deg) !important;
+}
+.keepsake-date img.lace-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+.keepsake-date-copy {
+  position: absolute !important;
+  inset: 18% 20% 18% 20% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-family: 'Allura', cursive !important;
+  color: #4a3b2c !important;
+  line-height: 1 !important;
+}
+.keepsake-date-copy .date-num {
+  font-size: 27px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  color: #3d3125 !important;
+}
+.keepsake-date-copy .date-month {
+  font-size: 16px !important;
+  line-height: 1.1 !important;
+  margin: 2px 0 !important;
+  color: #5c4a38 !important;
+}
+.keepsake-date-copy .date-year {
+  font-size: 13.5px !important;
+  letter-spacing: 0.05em !important;
+  color: #8c735d !important;
+}
+
+/* 6. Pink flower on bottom-right of lace badge */
+.keepsake-pink-flower {
+  position: absolute !important;
+  bottom: 8px !important;
+  right: -8px !important;
+  width: 38% !important;
+  max-width: 60px !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+  filter: drop-shadow(0 6px 12px rgba(41, 37, 33, 0.16)) !important;
+  transform: rotate(-10deg) !important;
+}
+
+/* 7. Bouquet on bottom-left of photo */
+.keepsake-fan {
+  position: absolute !important;
+  bottom: 8px !important;
+  left: 14% !important;
+  width: 37% !important;
+  max-width: 145px !important;
+  z-index: 5 !important;
+  pointer-events: none !important;
+  filter: drop-shadow(0 10px 20px rgba(41, 37, 33, 0.18)) !important;
+}
+.keepsake-fan img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* 8. Mother-of-pearl flower brooch on bottom-right of photo */
+.keepsake-pearl-flower {
+  position: absolute !important;
+  bottom: 50px !important;
+  right: 21% !important;
+  width: 17% !important;
+  max-width: 68px !important;
+  z-index: 5 !important;
+  pointer-events: none !important;
+  filter: drop-shadow(0 6px 14px rgba(41, 37, 33, 0.15)) !important;
+  transform: rotate(8deg) !important;
+}
