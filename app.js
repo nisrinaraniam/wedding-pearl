@@ -86,7 +86,6 @@ function finishOpening() {
   openingBusy = false;
 }
 
-let openingTimers = [];
 
 function openInvitation(skip = false) {
   if (openingBusy && !skip) return;
