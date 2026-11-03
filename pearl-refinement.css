@@ -118,16 +118,7 @@ body { background: var(--paper); color: var(--ink); }
 }
 
 .envelope-seal {
-  position: absolute;
-  top: 73%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 17%;
-  filter: drop-shadow(0 6px 12px rgba(41, 37, 33, 0.35));
-  transition: transform .5s cubic-bezier(.34,1.56,.64,1), opacity .4s ease;
-  z-index: 5;
-  cursor: pointer;
-  animation: seal-pulse 3.5s ease-in-out infinite;
+  display: none !important;
 }
 
 @keyframes seal-pulse {
