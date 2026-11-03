@@ -449,3 +449,203 @@ html.is-opening .cover-actions {
   .opening.dismissed { transform: none !important; }
   .reveal, .reveal-scale { opacity: 1; transform: none; }
 }
+
+
+/* ========================================================
+   QUOTES SECTION: Dark Brown Palette Theme
+   ======================================================== */
+#quote {
+  background: #46382b !important;
+  color: #FAF7F1 !important;
+  position: relative;
+  overflow: hidden;
+  padding-block: 80px 70px !important;
+}
+#quote::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23ffffff' opacity='.35' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
+}
+#quote .small-symbol {
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+  margin-bottom: 12px;
+}
+#quote .eyebrow {
+  color: #D9C9B5 !important;
+  letter-spacing: .24em;
+  opacity: 0.95;
+}
+#quote blockquote {
+  color: #FAF7F1 !important;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.6;
+  margin: 24px -8px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+#quote .quote-foot {
+  color: #D9C9B5 !important;
+  font-size: 15px;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+#quote .ornamental-rule {
+  color: #E8D9C5 !important;
+  opacity: 0.75;
+}
+
+/* ========================================================
+   BRIDE & GROOM SECTION: Botanical Floral Arch Background
+   ======================================================== */
+#couple {
+  background-color: #FDF9F0 !important;
+  background-image: url('assets/pearl-couple-arch-bg.webp') !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: 100% auto !important;
+  position: relative;
+  overflow: hidden;
+  padding-top: 85px !important;
+  padding-bottom: 80px !important;
+}
+#couple::before {
+  display: none !important;
+}
+#couple .couple-knot-ornament {
+  top: 14px;
+  right: 18px;
+  opacity: 0.6;
+}
+#couple .section-heading .eyebrow {
+  color: #94745C !important;
+  letter-spacing: .22em;
+}
+#couple .section-heading h2 {
+  color: #292521 !important;
+}
+
+/* ========================================================
+   PHOTO FRAMES STYLING
+   ======================================================== */
+/* 1. Couple Portrait Frame: Pearl Beaded Arch */
+.couple-portrait {
+  position: relative;
+  width: min(290px, 86%) !important;
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  margin: 0 auto 32px !important;
+}
+.couple-portrait .portrait {
+  position: absolute;
+  left: 19.5% !important;
+  top: 15.5% !important;
+  width: 61% !important;
+  height: 69% !important;
+  object-fit: cover !important;
+  border-radius: 80px 80px 6px 6px !important;
+  filter: sepia(.04) !important;
+  z-index: 1 !important;
+}
+.couple-portrait .portrait-frame {
+  position: absolute;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+.couple-portrait .portrait-flower {
+  z-index: 3 !important;
+  width: 95px !important;
+  right: -20px !important;
+  bottom: -10px !important;
+}
+
+/* 2. Gallery First Frame: Clam Pearl Portrait */
+.gallery-first {
+  width: min(265px, 80%) !important;
+  aspect-ratio: 768 / 1376 !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  background: transparent !important;
+  border: none !important;
+}
+.gallery-first .gallery-photo {
+  position: absolute;
+  left: 15% !important;
+  top: 9.5% !important;
+  width: 70% !important;
+  height: 82% !important;
+  object-fit: cover !important;
+  border-radius: 6px !important;
+  filter: sepia(.04) !important;
+  z-index: 1 !important;
+}
+.gallery-first .gallery-frame {
+  position: absolute;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+/* 3. Gallery Second Frame: Satin Ribbon with Bow Corners */
+.gallery-second {
+  width: min(285px, 86%) !important;
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  margin: 32px auto 0 !important;
+  position: relative !important;
+  background: transparent !important;
+  border: none !important;
+}
+.gallery-second .gallery-photo {
+  position: absolute;
+  left: 21% !important;
+  top: 9% !important;
+  width: 57% !important;
+  height: 78% !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
+  filter: sepia(.04) !important;
+  z-index: 1 !important;
+}
+.gallery-second .gallery-frame {
+  position: absolute;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+/* 4. Keepsake frames refinement */
+.keepsake-name-card img {
+  filter: drop-shadow(0 4px 14px rgba(41,37,33,.12));
+}
+.name-card-fill {
+  background: #fbf7ee !important;
+}
+.keepsake-date img {
+  filter: drop-shadow(0 4px 14px rgba(41,37,33,.12));
+}
+
+/* 5. Closing medallion lace frame */
+.closing-medallion {
+  max-width: 380px !important;
+  aspect-ratio: 1 / 1 !important;
+}
+.closing-lace {
+  filter: drop-shadow(0 6px 18px rgba(41,37,33,.14));
+}
+.closing-fill {
+  border-radius: 50% !important;
+  inset: 16% 16% !important;
+  background: #faf7f1 !important;
+}
