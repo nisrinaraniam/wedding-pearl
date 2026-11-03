@@ -480,12 +480,12 @@ function initScratchReveal() {
 
     // Script "Scratch here"
     ctx.fillStyle = '#5c4e3f';
-    ctx.font = 'italic 500 17px "Playfair Display", "Times New Roman", serif';
+    ctx.font = 'italic 400 24px "Allura", cursive';
     ctx.fillText('Scratch here', w / 2, h / 2 + 2);
 
     // Small subtitle
     ctx.fillStyle = '#9b8875';
-    ctx.font = '600 7px sans-serif';
+    ctx.font = '600 8.5px "Jost", sans-serif';
     ctx.fillText('USAP DI SINI', w / 2, h / 2 + 22);
     ctx.restore();
   }
