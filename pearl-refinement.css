@@ -1956,3 +1956,24 @@ p, blockquote {
   filter: drop-shadow(0 6px 14px rgba(41, 37, 33, 0.15)) !important;
   transform: rotate(8deg) !important;
 }
+
+
+/* ========================================================
+   HARI BAHAGIA KAMI - ARCHED LACE EVENT CARDS
+   ======================================================== */
+#events .event-card,
+.event-card {
+  width: 88% !important;
+  max-width: 345px !important;
+  padding: 50px 26px 42px !important;
+  margin: 28px auto !important;
+  background: url('assets/event-card-bg.webp?v=lace2028') no-repeat center center / 100% 100% !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 10px 22px rgba(64, 56, 47, 0.12)) !important;
+  text-align: center !important;
+  position: relative !important;
+  z-index: 3 !important;
+  box-sizing: border-box !important;
+}
