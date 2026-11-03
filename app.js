@@ -5,6 +5,9 @@ const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
 let openingBusy = false;
 let openingTimers = [];
+
+// Dev/Test helper
+
 let lastPhotoButton = null;
 let audioContext = null;
 let musicTimer = null;
@@ -17,6 +20,9 @@ let noteIndex = 0;
 // CORE DOM ELEMENTS & NAVIGATION
 // ==========================================
 const opening = $('#opening');
+if (new URLSearchParams(location.search).get('state') === 'opening') {
+  opening.classList.add('is-opening');
+}
 const main = $('#main');
 const navigation = $('#section-menu');
 const menuToggle = $('#menu-toggle');
@@ -80,25 +86,47 @@ function finishOpening() {
   openingBusy = false;
 }
 
-function openInvitation() {
-  if (openingBusy) return;
+let openingTimers = [];
+
+function openInvitation(skip = false) {
+  if (openingBusy && !skip) return;
+  openingTimers.forEach(clearTimeout);
+  openingTimers = [];
   openingBusy = true;
   const btn = $('#open-invitation');
   if (btn) btn.disabled = true;
   
   // Start music
-  playAudio();
+  if (!musicOn) {
+    const musicBtn = $('#music-toggle');
+    if (musicBtn) musicBtn.click();
+  }
   
-  // Direct smooth fade out without lengthy loading animations
-  opening.classList.add('dismissed');
-  setTimeout(finishOpening, 500);
+  if (skip || reducedMotion.matches) {
+    finishOpening();
+    return;
+  }
+
+  // Step 1: Switch from closed envelope to open envelope with revealed wedding letter
+  opening.classList.add('is-opening');
+
+  // Step 2: Allow user ~2.8s to read the revealed card in the open envelope, then gently fade to hero
+  openingTimers.push(setTimeout(() => {
+    opening.classList.add('dismissed');
+  }, 2800));
+
+  // Step 3: Complete transition to hero section
+  openingTimers.push(setTimeout(finishOpening, 3500));
 }
 
-$('#open-invitation').addEventListener('click', () => openInvitation());
+$('#open-invitation')?.addEventListener('click', () => openInvitation());
 $('.envelope-seal')?.addEventListener('click', () => openInvitation());
-$('.envelope-motion')?.addEventListener('click', () => openInvitation());
+$('#envelope-seal')?.addEventListener('click', () => openInvitation());
+$('.envelope-closed-layer')?.addEventListener('click', () => openInvitation());
+$('.letter-card')?.addEventListener('click', () => openInvitation(true));
+$('.envelope-open-layer')?.addEventListener('click', () => openInvitation(true));
 $('#skip-opening')?.addEventListener('click', () => openInvitation(true));
-$('.skip-link').addEventListener('click', () => openInvitation(true));
+$('.skip-link')?.addEventListener('click', () => openInvitation(true));
 
 opening.addEventListener('keydown', event => {
   if (event.key === 'Escape') openInvitation(true);

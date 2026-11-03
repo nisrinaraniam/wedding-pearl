@@ -2,21 +2,18 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<script>
-(function(){
-  var p = window.location.pathname;
-  if (p.includes('/wedding-harmoni')) {
-    document.write('<base href="/wedding-harmoni/">');
-  } else {
-    document.write('<base href="/">');
-  }
-})();
-</script>
 <meta name="theme-color" content="#94745C"><meta name="description" content="Undangan pernikahan Cintya & Hans — 8 Maret 2028, Bandung. Pearl Invitation by riungin.id.">
 <title>Cintya & Hans · Pearl Invitation by riungin.id</title>
 <link rel="preload" as="image" href="assets/pearl-cover-satin.webp">
-<link rel="preload" as="image" href="assets/pearl-envelope-closed.webp">
-<link rel="stylesheet" href="styles.css?v=pearl-open-cover-v5">
+<link rel="preload" as="image" href="assets/pearl-envelope-closed-aligned.webp">
+<link rel="preload" as="image" href="assets/pearl-envelope-open.webp">
+<link rel="stylesheet" href="styles.css?v=pearl-anim-v2">
+<link rel="stylesheet" href="pearl-refinement.css?v=cover-anim-v2">
+<script>
+if (window.location.search.includes('state=opening')) {
+  document.documentElement.classList.add('is-opening');
+}
+</script>
 </head>
 <body class="unopened">
 <a class="skip-link" href="#main">Langsung ke undangan</a>
@@ -25,22 +22,41 @@
   <div class="hanging-fixture cover-hanging fixture-left" aria-hidden="true"><span class="pearl-pin"></span><div class="hanging-item sway"><span class="hanging-cord"></span><img class="pendant-asset" src="assets/pearl-drapery.webp" alt=""></div></div>
   <div class="hanging-fixture cover-hanging fixture-right" aria-hidden="true"><span class="pearl-pin"></span><div class="hanging-item sway"><span class="hanging-cord"></span><img class="pendant-asset" src="assets/pearl-brooch.webp" alt=""></div></div>
   <div class="opening-content">
-    <div class="envelope-wrap" aria-label="Amplop Undangan">
-      <img class="envelope-img" src="assets/pearl-envelope-open-cropped.webp" alt="Amplop Terbuka">
-      <div class="paper-content">
-        <p class="paper-eyebrow">THE WEDDING INVITATION</p>
-        <h1 id="opening-title" class="paper-couple">Cintya <span>&</span> Hans</h1>
-        <div class="paper-rule"></div>
-        <div class="guest-address">
-          <p class="to-label">KEPADA YTH.</p>
-          <p class="guest-name">Bapak / Ibu / Saudara/i</p>
+    <p class="eyebrow cover-badge">THE WEDDING INVITATION</p>
+    
+    <div class="envelope-scene" aria-label="Amplop Undangan">
+      <div class="envelope-motion">
+        <!-- CLOSED ENVELOPE LAYER -->
+        <div class="envelope-closed-layer">
+          <img class="envelope-closed" src="assets/pearl-envelope-closed-aligned.webp" alt="Amplop Tertutup">
+          <img class="envelope-seal" id="envelope-seal" src="assets/pearl-wax-seal.webp" alt="Segel Lilin Pearl">
         </div>
-        <button class="button button-open" id="open-invitation">
-          <span>BUKA UNDANGAN</span>
-        </button>
+
+        <!-- OPEN ENVELOPE WITH WEDDING CARD -->
+        <div class="envelope-open-layer" aria-hidden="true">
+          <img class="envelope-open" src="assets/pearl-envelope-open.webp" alt="Amplop Terbuka">
+          <div class="letter-card">
+            <p class="letter-eyebrow">YOU'RE INVITED TO THE WEDDING OF</p>
+            <h1 id="opening-title" class="letter-couple script">Cintya <span>&</span> Hans</h1>
+            <div class="letter-rule"></div>
+            <p class="letter-date">RABU, 8 MARET 2028 · BANDUNG</p>
+            <p class="letter-quote">“A celebration of love and new beginnings”</p>
+          </div>
+        </div>
       </div>
       <img class="cover-rose flower-sway" src="assets/pearl-rose.webp" alt="" aria-hidden="true">
-      <img class="cover-seal" src="assets/pearl-wax-seal.webp" alt="" aria-hidden="true">
+    </div>
+
+    <!-- RECIPIENT & OPEN BUTTON -->
+    <div class="cover-actions">
+      <div class="guest-address">
+        <p class="eyebrow light">KEPADA YTH.</p>
+        <p class="guest-name">Bapak / Ibu / Saudara/i</p>
+      </div>
+      <button class="button button-open" id="open-invitation">
+        <span>BUKA UNDANGAN</span>
+      </button>
+      <button class="skip-opening" id="skip-opening">Lewati animasi</button>
     </div>
   </div>
 </div>
@@ -208,7 +224,7 @@
 <dialog id="photo-dialog" class="photo-dialog"><button id="close-photo" aria-label="Tutup foto">×</button><img id="large-photo" alt="Potret kenangan pasangan"><p>Captured in time · Cintya & Hans</p></dialog>
 <div class="toast" id="toast" role="status"></div>
 <noscript><style>.opening{display:none}body{overflow:auto}main{margin-left:0}main[inert]{pointer-events:auto}.reveal{opacity:1}.desktop-art{display:none}</style><p>Aktifkan JavaScript untuk membuka undangan dan menggunakan formulir.</p></noscript>
-<script src="app.js?v=pearl-20261102"></script>
+<script src="app.js?v=pearl-anim-v3"></script>
 </body></html>
 
 
