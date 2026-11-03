@@ -1675,6 +1675,7 @@ p, blockquote {
   transform: rotate(15deg) !important;
 }
 
+.gallery-flower-pearl,
 .gallery-snail-pearl {
   position: absolute !important;
   width: clamp(65px, 16vw, 90px) !important;
