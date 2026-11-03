@@ -638,16 +638,20 @@ html.is-opening .cover-actions {
 
 /* 5. Closing medallion lace frame */
 .closing-medallion {
-  max-width: 380px !important;
+  max-width: 440px !important;
+  width: 95% !important;
   aspect-ratio: 1 / 1 !important;
+  margin: 0 auto !important;
+  filter: drop-shadow(0 14px 32px rgba(41, 37, 33, 0.16)) !important;
 }
 .closing-lace {
   filter: drop-shadow(0 6px 18px rgba(41,37,33,.14));
 }
 .closing-fill {
   border-radius: 50% !important;
-  inset: 16% 16% !important;
-  background: #faf7f1 !important;
+  inset: 12% 14% !important;
+  background: rgba(253, 251, 247, 0.94) !important;
+  box-shadow: 0 10px 28px rgba(41, 37, 33, 0.1) !important;
 }
 
 
@@ -921,17 +925,23 @@ html.is-opening .cover-actions {
   z-index: 2;
 }
 
-.closing .closing-fill {
-  background: rgba(253, 251, 247, 0.94) !important;
-  box-shadow: 0 10px 28px rgba(41, 37, 33, 0.1) !important;
+.closing-copy {
+  inset: 16% 16% 14% 16% !important;
 }
 
-.closing-medallion {
-  filter: drop-shadow(0 14px 32px rgba(41, 37, 33, 0.16)) !important;
-}
-
-.closing .closing-copy h2 {
+.closing .closing-copy h2,
+.closing-copy h2.script {
   color: #3b2f23 !important;
+  font-size: clamp(36px, 8vw, 46px) !important;
+  margin-bottom: 4px !important;
+  line-height: 1.1 !important;
+}
+
+.closing-copy p:not(.eyebrow):not(.script) {
+  font-size: clamp(12px, 2.8vw, 13.5px) !important;
+  line-height: 1.45 !important;
+  margin: 6px auto !important;
+  max-width: 230px !important;
 }
 
 .closing .closing-copy .eyebrow {
@@ -939,8 +949,26 @@ html.is-opening .cover-actions {
   letter-spacing: .24em !important;
 }
 
-.closing .closing-names {
+.closing .closing-names,
+.closing-names {
   color: #3b2f23 !important;
+  font-size: clamp(32px, 7.5vw, 40px) !important;
+  margin-top: 4px !important;
+  line-height: 1.1 !important;
+}
+
+.closing-fan,
+.closing-fan.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: absolute !important;
+  width: 38% !important;
+  right: 2% !important;
+  bottom: 2% !important;
+  z-index: 5 !important;
+  rotate: 0deg !important;
+  transform: rotate(0deg) !important;
+  filter: drop-shadow(0 8px 16px rgba(41, 37, 33, 0.22)) !important;
 }
 
 .closing .closing-date {
@@ -964,6 +992,26 @@ html.is-opening .cover-actions {
 .closing .replay:hover {
   color: #554332 !important;
   border-color: #554332 !important;
+}
+
+@media (max-width: 380px) {
+  .closing-medallion {
+    max-width: 350px !important;
+    width: 98% !important;
+  }
+  .closing-copy {
+    inset: 14% 14% 12% 14% !important;
+  }
+  .closing-copy p:not(.eyebrow):not(.script) {
+    font-size: 11.5px !important;
+    max-width: 200px !important;
+  }
+  .closing-fan,
+  .closing-fan.visible {
+    width: 36% !important;
+    right: 2% !important;
+    bottom: 2% !important;
+  }
 }
 
 .page-tail {
@@ -1008,13 +1056,13 @@ body, main, p, input, textarea, select, button, label, .eyebrow {
   line-height: 1.15 !important;
 }
 
-/* Closing title with Allura */
+/* Closing typography coordinated with enlarged medallion */
 .closing-copy h2.script {
-  font-size: clamp(42px, 8vw, 54px) !important;
+  font-size: clamp(36px, 8vw, 46px) !important;
   line-height: 1.1 !important;
 }
 .closing-names {
-  font-size: clamp(36px, 7vw, 46px) !important;
+  font-size: clamp(32px, 7.5vw, 40px) !important;
   line-height: 1.1 !important;
 }
 
