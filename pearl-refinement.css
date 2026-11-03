@@ -821,7 +821,9 @@ html.is-opening .cover-actions {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
 }
 #dress .dress-fan {
-  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.35)) !important;
+  width: 150px !important;
+  margin: 24px auto -10px !important;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.45)) drop-shadow(0 0 12px rgba(253, 251, 247, 0.2)) !important;
 }
 
 
