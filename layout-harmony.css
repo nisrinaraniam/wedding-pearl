@@ -147,27 +147,30 @@
   box-sizing: border-box !important;
 }
 .letter-eyebrow {
-  font: 600 clamp(7px, 2vw, 8px) var(--sans) !important;
-  letter-spacing: .2em !important;
-  color: #806c56 !important;
+  font: 600 clamp(6px, 1.8vw, 7.5px) var(--sans) !important;
+  letter-spacing: .22em !important;
+  line-height: 1.45 !important;
+  color: #8c7864 !important;
   text-transform: uppercase !important;
   margin: 0 0 6px !important;
-  white-space: nowrap !important;
+  white-space: normal !important;
+  text-align: center !important;
 }
 .letter-couple {
   font-family: var(--script), cursive !important;
-  font-size: clamp(32px, 9vw, 44px) !important;
+  font-size: clamp(22px, 6.5vw, 28px) !important;
+  line-height: 1.15 !important;
   color: #2e241c !important;
-  line-height: 1.1 !important;
   margin: 0 !important;
   font-weight: 400 !important;
+  text-align: center !important;
 }
 .letter-couple span {
-  font-size: .65em !important;
-  color: #806c56 !important;
+  font-size: .75em !important;
+  color: #8c7864 !important;
   font-family: var(--script), cursive !important;
   display: inline-block !important;
-  margin: 0 4px !important;
+  margin-right: 3px !important;
 }
 
 /* 2. Bride & Groom: Smaller photo holder & lowered title/subtitle */
