@@ -895,100 +895,78 @@ html.is-opening .cover-actions {
 }
 
 /* ========================================================
-   RSVP SECTION: Satin Drapery Theme (Cover Background)
+   CLOSING / THANK YOU SECTION: Satin Drapery Theme
    ======================================================== */
-#rsvp {
+.closing,
+#closing {
   position: relative !important;
   background: #E8DFD3 url('assets/pearl-cover-satin.webp') center top / cover no-repeat !important;
-  padding-top: 125px !important;
-  padding-bottom: 95px !important;
-  padding-inline: 26px !important;
+  color: #292521 !important;
+  padding: 85px 24px 80px !important;
   overflow: hidden !important;
+  text-align: center !important;
 }
 
-#rsvp::before {
+.closing::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 252, 247, 0.42) 0%, rgba(245, 238, 226, 0.22) 65%, rgba(148, 116, 92, 0.18) 100%);
+  background: radial-gradient(circle at 50% 45%, rgba(255, 252, 247, 0.42) 0%, rgba(245, 238, 226, 0.22) 65%, rgba(148, 116, 92, 0.16) 100%);
   pointer-events: none;
   z-index: 1;
 }
 
-#rsvp .rsvp-seal {
-  position: absolute !important;
-  width: 52px !important;
-  height: auto !important;
-  left: 50% !important;
-  top: 36px !important;
-  transform: translateX(-50%) !important;
-  filter: drop-shadow(0 6px 14px rgba(41, 37, 33, 0.35)) !important;
-  z-index: 3 !important;
-}
-
-#rsvp .section-heading {
+.closing > * {
   position: relative;
   z-index: 2;
-  margin-bottom: 20px !important;
 }
 
-#rsvp .section-heading h2 {
+.closing .closing-fill {
+  background: rgba(253, 251, 247, 0.94) !important;
+  box-shadow: 0 10px 28px rgba(41, 37, 33, 0.1) !important;
+}
+
+.closing-medallion {
+  filter: drop-shadow(0 14px 32px rgba(41, 37, 33, 0.16)) !important;
+}
+
+.closing .closing-copy h2 {
   color: #3b2f23 !important;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7) !important;
 }
 
-#rsvp .section-heading .eyebrow {
+.closing .closing-copy .eyebrow {
   color: #8a6c54 !important;
   letter-spacing: .24em !important;
-  font-weight: 600 !important;
 }
 
-#rsvp .section-heading p {
+.closing .closing-names {
+  color: #3b2f23 !important;
+}
+
+.closing .closing-date {
+  color: #4a3b2c !important;
+  font-weight: 500 !important;
+}
+
+.closing .eyebrow.light {
+  color: #7d6854 !important;
+  letter-spacing: .2em !important;
+}
+
+.closing .replay {
+  color: #80664e !important;
+  border-bottom: 1px solid rgba(128, 102, 78, 0.45) !important;
+  font-weight: 600 !important;
+  letter-spacing: .16em !important;
+  transition: color .2s, border-color .2s !important;
+}
+
+.closing .replay:hover {
   color: #554332 !important;
+  border-color: #554332 !important;
 }
 
-#rsvp .demo-note {
-  position: relative;
-  z-index: 2;
-  color: #7d6b58 !important;
-  margin-bottom: 24px !important;
-}
-
-#rsvp .elegant-form {
-  position: relative;
-  z-index: 2;
-  max-width: 360px !important;
-  margin: 0 auto !important;
-}
-
-#rsvp .elegant-form > label, 
-#rsvp .elegant-form legend {
-  color: #6d5642 !important;
-  font-weight: 600 !important;
-  letter-spacing: .14em !important;
-}
-
-#rsvp .elegant-form input:not([type=radio]), 
-#rsvp .elegant-form select {
-  background: rgba(255, 255, 255, 0.95) !important;
-  border: 1px solid #cfc0ad !important;
-  color: #292521 !important;
-  box-shadow: 0 2px 6px rgba(41, 37, 33, 0.05) !important;
-}
-
-#rsvp .radio-label span {
-  color: #463b33 !important;
-}
-
-#rsvp .button-jade {
-  background: #80664e !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(41, 37, 33, 0.22) !important;
-  transition: transform .2s, background .2s, box-shadow .2s !important;
-}
-
-#rsvp .button-jade:hover {
-  background: #67503c !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 6px 18px rgba(41, 37, 33, 0.28) !important;
+.page-tail {
+  background: #E8DFD3 !important;
+  height: 20px !important;
 }
