@@ -531,38 +531,38 @@ html.is-opening .cover-actions {
 /* ========================================================
    PHOTO FRAMES STYLING
    ======================================================== */
-/* 1. Couple Portrait Frame: Pearl Beaded Arch */
+/* 1. Couple Portrait: Oval photo holder without frame */
 .couple-portrait {
-  position: relative;
-  width: min(290px, 86%) !important;
-  aspect-ratio: 1 / 1 !important;
+  position: relative !important;
+  width: min(240px, 72vw) !important;
+  aspect-ratio: 3 / 4 !important;
   height: auto !important;
-  margin: 0 auto 32px !important;
+  margin: 0 auto 35px !important;
 }
 .couple-portrait .portrait {
-  position: absolute;
-  left: 19.5% !important;
-  top: 15.5% !important;
-  width: 61% !important;
-  height: 69% !important;
+  position: relative !important;
+  inset: auto !important;
+  left: auto !important;
+  top: auto !important;
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover !important;
-  border-radius: 80px 80px 6px 6px !important;
+  object-position: center 28% !important;
+  border-radius: 50% !important;
+  box-shadow: 0 12px 32px rgba(64, 56, 47, 0.16) !important;
   filter: sepia(.04) !important;
+  display: block !important;
   z-index: 1 !important;
 }
 .couple-portrait .portrait-frame {
-  position: absolute;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  z-index: 2 !important;
-  pointer-events: none !important;
+  display: none !important;
 }
 .couple-portrait .portrait-flower {
+  position: absolute !important;
   z-index: 3 !important;
-  width: 95px !important;
-  right: -20px !important;
-  bottom: -10px !important;
+  width: 85px !important;
+  right: -16px !important;
+  bottom: -6px !important;
 }
 
 /* 2. Gallery First Frame: Clam Pearl Portrait */
